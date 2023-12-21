@@ -1,15 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from './Pages/Home/Home/Home.jsx';
-import Main from './Layout/Main.jsx';
-import Login from './Pages/Login/Login.jsx';
-import Register from './Pages/Register/Register.jsx';
-import ErrorPage from './ErrorPage/ErrorPage.jsx';
-import Dashboard from './Pages/Dashboard/Dashboard.jsx';
-import PrivateRoute from './PrivateRoute/PrivateRoute.jsx';
-import AuthProvider from './AuthProvider/AuthProvider.jsx';
+import Home from "./Pages/Home/Home/Home.jsx";
+import Main from "./Layout/Main.jsx";
+import Login from "./Pages/Login/Login.jsx";
+import Register from "./Pages/Register/Register.jsx";
+import ErrorPage from "./ErrorPage/ErrorPage.jsx";
+import Dashboard from "./Layout/Dashboard.jsx";
+import PrivateRoute from "./PrivateRoute/PrivateRoute.jsx";
+import AuthProvider from "./AuthProvider/AuthProvider.jsx";
+import AddTask from "./Pages/Dashboard/AddTask/AddTask.jsx";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -31,12 +33,18 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/dashboard",
+    path: "dashboard",
     element: (
       <PrivateRoute>
         <Dashboard></Dashboard>
       </PrivateRoute>
     ),
+    children: [
+      {
+        path: "addtask",
+        element: <AddTask></AddTask>,
+      },
+    ],
   },
 ]);
 
