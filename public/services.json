@@ -1,0 +1,34 @@
+ [
+    {
+      "role": "Developers",
+      "benefits": "Access real-time performance metrics, monitor resource usage, and identify and troubleshoot issues efficiently.",
+      "image": "https://i.ibb.co/ZJhW3dy/pexels-olia-danilevich-4974915.jpg"
+    },
+    {
+      "role": "Corporate",
+      "benefits": "Keep track of application performance during important presentations, manage system resources for smooth operations.",
+      "image": "https://i.ibb.co/MS4VTs6/pexels-pixabay-164547.jpg"
+    },
+    {
+      "role": "Professionals",
+      "benefits": "Ensure seamless banking applications, monitor system health for secure transactions, and optimize resource allocation.",
+      "image": "https://i.ibb.co/cCXw6D7/guy-shows-document-girl-group-young-freelancers-office-have-conversation-working.jpg"
+    },
+    {
+      "role": "Bankers",
+      "benefits": "Oversee the performance of multiple systems, identify bottlenecks, and allocate resources for optimal network efficiency.",
+      "image": "https://i.ibb.co/D5HHYtZ/christina-wocintechchat-com-0-Zx1b-Dv5-BNY-unsplash.jpg"
+    },
+    {
+      "role": "Athlete",
+      "benefits": "Streamline development and operations, monitor deployment processes, and ensure continuous integration.",
+      "image": "https://i.ibb.co/HCK9dgY/alonso-reyes-0-Hl-I76m4jx-U-unsplash.jpg"
+    },
+    {
+      "role": "FinanceWizard007",
+      "benefits": "Optimize financial software, track market trends, and ensure the security of financial transactions.",
+      "image": "https://i.ibb.co/hHMLxtj/jonathan-chng-3-R4v-Pr-SB1c4-unsplash.jpg"
+    }
+    
+  ]
+

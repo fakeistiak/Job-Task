@@ -12,7 +12,7 @@ const Dashboard = () => {
       <div className="flex text-white ">
         <div className="mx-auto lg:w-[400px] min-h-screen flex flex-col pt-12 bg-black">
           <div className="flex flex-col items-center gap-2">
-            <img className="h-48 w-48 rounded-full object-cover" src={user?.photoURL} alt="" />
+            <img className="lg:h-60 h-16 w-16 lg:w-60 rounded-full object-cover" src={user?.photoURL} alt="" />
             <h1 className="lg:text-lg text-sm font-semibold">Name : {user?.displayName}</h1>
             <h1 className="lg:text-lg text-sm font-semibold">Email : {user?.email}</h1>
           </div>
