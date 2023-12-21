@@ -11,7 +11,7 @@ const Services = () => {
         {servicesData.map((service, index) => (
           <div
             key={index}
-            className="w-full max-w-sm overflow-hidden rounded-lg shadow-lg m-4 bg-black"
+            className="w-full lg:max-w-sm overflow-hidden rounded-xl shadow-lg shadow-black m-4 bg-black"
           >
             <img
               className="object-cover object-center w-full h-56"
