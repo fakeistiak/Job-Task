@@ -20,13 +20,13 @@ const NavBar = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink className="font-semibold" to="/">
+        <NavLink className="font-semibold" to="/dashboard">
           Dashboard
         </NavLink>
       </li>
       <li>
-        <NavLink className="font-semibold" to="/">
-          Home
+        <NavLink className="font-semibold" to="/login">
+          Login
         </NavLink>
       </li>
     </>
@@ -46,7 +46,7 @@ const NavBar = () => {
             {navLinks}
           </ul>
         </div>
-        <p className="btn btn-ghost normal-case text-xl font-bold">
+        <p className="btn btn-ghost normal-case text-2xl font-bold">
           SCC Technovision Inc
         </p>
       </div>
@@ -63,7 +63,7 @@ const NavBar = () => {
                 alt="User_avatar"
               />
             )}
-            <h1 className="text-lg text-white">{user && user?.displayName}</h1>
+            <h1 className="text-lg text-black font-medium">{user && user?.displayName}</h1>
           </div>
         </label>
         {user ? (

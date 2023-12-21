@@ -3,7 +3,10 @@ import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import swal from "sweetalert";
+import { RiLockPasswordFill } from "react-icons/ri";
+import { FcGoogle } from "react-icons/fc";
 import app from "../../firebase/firebase.config";
+import { MdEmail } from "react-icons/md";
 
 const Login = () => {
   const [setUser] = useState(null);
@@ -51,80 +54,90 @@ const Login = () => {
       });
   };
 
-  return (
-    <div>
-      <header className="bg-gray-900 pattern">
-        <div className="container px-6 mx-auto">
-          <div className="flex flex-col items-center py-6 lg:h-[42rem] sm:h-screen lg:flex-row">
-            <div className="lg:w-1/2">
-              <h3 className="mt-2 text-6xl font-bold text-gray-100">
-                Hello <span className="text-pink-500">Guest</span>
-                <br />
-                <span className="text-pink-500">Login</span> Now
-              </h3>
-
-              <p className="mt-4 text-gray-100">
-                Please Login to meet our team and know about us also you can
-                connect with us
-              </p>
-            </div>
-
-            <div className="flex mt-8 lg:w-1/2 lg:justify-end lg:mt-0">
-              <div className="w-full max-w-md bg-white rounded-lg dark:bg-gray-800">
-                <div className="px-6 py-8 text-center">
-                  <h2 className="text-2xl font-semibold text-gray-700 dark:text-white fo">
-                    Login
-                  </h2>
-
-                  <form onSubmit={handleLogin} action="#">
-                    <div className="mt-4 text-white">
-                      <input
-                        className="block w-full px-4 py-2 placeholder-gray-400 bg-white border rounded-md dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-500 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:ring-blue-300 focus:outline-none focus:ring"
-                        required
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        aria-label="Email address"
-                      />
-                      <input
-                        className="block w-full px-4 py-2 mt-4 placeholder-gray-400 bg-white border rounded-md dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-500 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-opacity-40 focus:ring-blue-300 focus:outline-none focus:ring"
-                        required
-                        type="password"
-                        name="password"
-                        placeholder="Password"
-                        aria-label="Password"
-                      />
-                    </div>
-
-                    <div className="flex items-center justify-between mt-4">
-                      <button className="btn btn-secondary text-white w-full">
-                        Login
-                      </button>
-                    </div>
-                  </form>
-                  <div className="flex items-center justify-between mt-4 pb-4">
-                    <button
-                      onClick={handleGoogleSignIn}
-                      className="btn btn-secondary text-white w-full hover:bg-gray-600"
-                    >
-                      Sign in with Google
-                    </button>
-                  </div>
-                  <p className="text-sm text-white">
-                    Don't have an Account?{" "}
-                    <Link to="/register" className="text-blue-600 pl-2">
-                      {" "}
-                      Register
-                    </Link>
-                  </p>
+    return (
+      <>
+        <div>
+          <section>
+            <div className="container flex items-center justify-center min-h-screen px-6 mx-auto">
+              <form onSubmit={handleLogin} className="w-full max-w-md">
+                <div className="normal-case font-bold text-center text-white">
+                  <h1 className="lg:text-3xl pl-4 md:text-2xl sm:text-xl font-extrabold">
+                    <span>
+                      <span className="text-black">SSC Technovision Inc</span>
+                    </span>
+                  </h1>
                 </div>
-              </div>
+                <div className="flex items-center justify-center mt-6">
+                  <a className="w-1/3 pb-4 font-medium text-center text-gray-800 capitalize border-gray border-b-2 dark:text-black dark:border-black">
+                    sign in
+                  </a>
+
+                  <Link
+                    to="/register"
+                    href="#"
+                    className="w-1/3 pb-4 font-medium text-center text-gray-500 capitalize border-b  dark:border-gray-400 border-gray-400 "
+                  >
+                    sign up
+                  </Link>
+                </div>
+
+                <div className="relative flex items-center mt-6">
+                  <div className="absolute">
+                    <MdEmail className="w-6 h-6 mx-3 text-black" />
+                  </div>
+                  <input
+                    type="email"
+                    name="email"
+                    className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11"
+                    placeholder="Email address"
+                  />
+                </div>
+
+                <div className="relative flex items-center mt-4">
+                  <div className="absolute">
+                    <RiLockPasswordFill className="w-6 h-6 mx-3 text-black" />
+                  </div>
+                  <input
+                    type="password"
+                    name="password"
+                    className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg"
+                    placeholder="Password"
+                  />
+                </div>
+                <div className="mt-6">
+                  <button className="btn w-full bg-black text-white hover:bg-black">
+                    Sign Up
+                  </button>
+                </div>
+                <div className="flex items-center justify-between mt-4">
+                  <span className="w-1/5 border- lg:w-1/5"></span>
+
+                  <a
+                    href="#"
+                    className="text-xs text-center uppercase mb-2 hover:underline"
+                  >
+                    or login with Social Media
+                  </a>
+
+                  <span className="w-1/5 border-b dark:border-gray-400 lg:w-1/5"></span>
+                </div>
+
+                <div className="flex">
+                  <button
+                    onClick={handleGoogleSignIn}
+                    className="btn btn-ghost w-full mt-4 border-white hover:bg-black hover:text-white"
+                  >
+                    Sign In with Google{" "}
+                    <FcGoogle className="text-2xl"></FcGoogle>{" "}
+                  </button>
+                </div>
+              </form>
             </div>
-          </div>
+          </section>
         </div>
-      </header>
-    </div>
-  );
+        <div></div>
+      </>
+    );
 };
 
 export default Login;

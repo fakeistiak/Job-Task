@@ -11,7 +11,7 @@ const Footer = () => {
     <footer className="footer footer-center p-10 text-black">
       <aside>
         <p className="font-bold">
-          IAB<span className="text-red-500">Courses</span> Industries Ltd.{" "}
+          <span className="text-black">SSC</span> Technovision Inc
           <br />
           Providing reliable rooms since 1992
         </p>
