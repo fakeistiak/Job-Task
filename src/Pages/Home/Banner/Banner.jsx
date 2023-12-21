@@ -14,7 +14,7 @@ const Banner = () => {
               Welcome to our <span className="text-black">Saas</span> Project
             </h1>
             <button className="w-full px-5 py-2 mt-4 text-md font-medium text-white capitalize transition-colors duration-300 transform rounded-md lg:w-auto bg-black">
-              Let's Exploree
+              Let's Explore
             </button>
           </div>
         </div>
