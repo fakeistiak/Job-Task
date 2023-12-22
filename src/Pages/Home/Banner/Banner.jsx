@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Banner = () => {
   const backgroundImage =
     "https://i.ibb.co/5v9F8fj/406804122-885399963223314-4059098543875446777-n.jpg";
@@ -20,9 +22,9 @@ const Banner = () => {
               resource usage, facilitates troubleshooting, and enhances system
               performance and efficiency.
             </p>
-            <button className="w-full px-5 py-2 mt-4 text-md font-medium text-white capitalize transition-colors duration-300 transform rounded-md lg:w-auto bg-black">
+            <Link to="/dashboard" className="w-full px-5 py-2 mt-4 text-md font-medium text-white capitalize transition-colors duration-300 transform rounded-md lg:w-auto bg-black">
               Let's Explore
-            </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -2,6 +2,11 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import { useContext } from "react";
+import { CiLogin } from "react-icons/ci";
+import { IoHomeOutline } from "react-icons/io5";
+import { RxDashboard } from "react-icons/rx";
+
+
 const NavBar = () => {
   const { user, logOut } = useContext(AuthContext);
 
@@ -14,23 +19,22 @@ const NavBar = () => {
 
   const navLinks = (
     <>
-      <li>
+      <a className="mb-2 text-xl">
         <NavLink className="font-semibold" to="/">
-          Home
+          <IoHomeOutline/>
         </NavLink>
-      </li>
-      <li>
-        <NavLink className="font-semibold" to="/dashboard">
-          Dashboard
-        </NavLink>
-      </li>
-      <li>
+      </a>
+      <a className="mb-2 lg:px-6 text-xl">
+        <NavLink className="font-semibold" to="/dashboard"><RxDashboard/></NavLink>
+      </a>
+      <a className="mb-2 text-xl">
         <NavLink className="font-semibold" to="/login">
-          Login
+          <CiLogin/>
         </NavLink>
-      </li>
+      </a>
     </>
   );
+
 
   return (
     <div className="navbar bg-white text-black">

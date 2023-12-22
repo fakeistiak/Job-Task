@@ -1,21 +1,27 @@
+import React, { useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import { useContext } from "react";
 import { FaHome, FaTasks } from "react-icons/fa";
-import { AuthContext } from "../AuthProvider/AuthProvider";
+import { IoMenuSharp } from "react-icons/io5";
 
 const Dashboard = () => {
-  const { user } = useContext(AuthContext);
-  console.log("user in Dashboard", user);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
 
   return (
     <div>
+      {/* Button to toggle the dropdown */}
+      <button
+        className="lg:hidden block text-black p-4"
+        onClick={toggleDropdown}
+      >
+       <IoMenuSharp className="text-xl"/>
+      </button>
+
       <div className="flex text-white ">
-        <div className="mx-auto lg:w-[400px] min-h-screen flex flex-col pt-12 bg-black">
-          <div className="flex flex-col items-center gap-2">
-            <img className="lg:h-60 h-16 w-16 lg:w-60 rounded-full object-cover" src={user?.photoURL} alt="" />
-            <h1 className="lg:text-lg text-sm font-semibold">Name : {user?.displayName}</h1>
-            <h1 className="lg:text-lg text-sm font-semibold">Email : {user?.email}</h1>
-          </div>
+        {/* Sidebar for larger devices */}
+        <div className="mx-auto lg:w-[200px] min-h-screen flex-col pt-8 bg-black hidden lg:block">
           <ul className="menu p-4">
             <li className="lg:text-xl md:text-md sm:text-sm">
               <NavLink to="/">
@@ -31,6 +37,27 @@ const Dashboard = () => {
             </li>
           </ul>
         </div>
+
+        {/* Dropdown content for small devices */}
+        {isDropdownOpen && (
+          <div className="mx-auto lg:hidden min-h-screen flex flex-col pt-8 bg-black">
+            <ul className="menu p-4">
+              <li className="lg:text-xl md:text-md sm:text-sm">
+                <NavLink to="/">
+                  <FaHome />
+                  Home
+                </NavLink>
+              </li>
+              <li className="lg:text-xl md:text-md sm:text-sm">
+                <NavLink to="/dashboard/addtask">
+                  <FaTasks />
+                  Add a Task
+                </NavLink>
+              </li>
+            </ul>
+          </div>
+        )}
+
         <div className="flex-1">
           <Outlet></Outlet>
         </div>

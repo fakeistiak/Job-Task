@@ -4,7 +4,7 @@ import servicesData from "../../../../public/services.json";
 const Services = () => {
   return (
     <div>
-      <h1 className="text-5xl font-serif font-medium text-center  py-12">
+      <h1 className="text-5xl font-serif font-bold text-center  py-12">
         Services
       </h1>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 justify-center p-12 gap-10 text-white ">
